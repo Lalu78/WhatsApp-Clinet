@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+//components
+import Messenger from "./components/Messenger";
+import AccountProvider from "./contex/AccountProvider";
+import TempleProvider from "./theme/TempleProvider";
+import UserProvider from "./contex/UserProvider";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TempleProvider>
+        <UserProvider>
+        <AccountProvider>
+          <Messenger />
+        </AccountProvider>
+        </UserProvider>
+      </TempleProvider>
     </div>
   );
 }
